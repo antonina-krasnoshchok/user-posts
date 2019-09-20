@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './rootReducer';
 import PostList from './modules/posts/components/PostList';
 import Post from './modules/posts/components/Post';
+import User from './modules/users/components/User';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(
@@ -19,7 +20,8 @@ ReactDOM.render(
     <Router>
       <Switch>
         <Route exact path = '/posts' component = {PostList} />
-        <Route exact path= '/posts/:id' component = {Post}/>
+        <Route exact path= '/posts/:postId' component = {Post}/>
+        <Route exact path= '/users/:userId' component = {User}/>
         <Redirect to ='/posts'/>
       </Switch>
     </Router>

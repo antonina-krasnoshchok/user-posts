@@ -18,7 +18,7 @@ const Post = ({ match }) => {
     const posts = useSelector(state => getPosts(state));
     const isError = useSelector(state => getError(state));
 
-    const postId = +match.params.id;
+    const postId = +match.params.postId;
     const post = posts.find(({ id }) => id === postId);
 
     useEffect(() => {
